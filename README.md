@@ -1,21 +1,6 @@
-<<<<<<< HEAD
-# egg-ts
+# tutorial
 
-使用 typescript 开发 eggjs 插件
-
-## 插件最小化
-
-在 package.json 中添加如下节点，即声明了该包是一个 egg 插件
-
-```json
-  "eggPlugin": {
-    "name": "ts"
-  },
-```
-=======
-# history
-
-history data
+入坑指南
 
 ## QuickStart
 
@@ -44,6 +29,4 @@ $ npm stop
 - Use `npm test` to run unit test.
 - Use `npm run autod` to auto detect dependencies upgrade, see [autod](https://www.npmjs.com/package/autod) for more detail.
 
-
 [midway]: https://midwayjs.org
->>>>>>> init
