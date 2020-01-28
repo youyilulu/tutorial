@@ -1,70 +1,28 @@
 {
-<<<<<<< HEAD
-  "name": "egg-ts",
-  "version": "1.0.0",
-  "description": "egg plugin demo written with typescript",
-  "engines": {
-    "node": ">=8.0.0"
-  },
-  "eggPlugin": {
-    "name": "ts"
-  },
-  "devDependencies": {
-    "cross-env": "^6.0.0",
-=======
   "name": "tutorial",
   "version": "1.0.0",
   "description": "tutorial",
   "private": true,
   "dependencies": {
-    "midway": "^1.0.0",
     "egg-scripts": "^2.10.0",
+    "midway": "^1.0.0",
+    "mysql2": "^2.0.1",
     "sequelize": "^5.21.2",
     "sequelize-typescript": "^1.0.0",
-    "mysql2": "^2.0.1",
     "egg-ts": "../tutorial_plugins/egg-ts"
   },
   "devDependencies": {
-    "@types/mocha": "^5.2.7",
     "@types/node": "^10.5.5",
     "cross-env": "^6.0.0",
     "egg-ci": "^1.8.0",
     "midway-bin": "1",
     "midway-mock": "1",
-    "tslib": "^1.8.1",
->>>>>>> init
-    "tslint-midway-contrib": "1",
     "ts-node": "^8.3.0",
+    "tslib": "^1.8.1",
     "tslint": "^5.11.0",
+    "tslint-midway-contrib": "1",
     "typescript": "^3.5.0"
   },
-<<<<<<< HEAD
-  "scripts": {
-    "test": "test",
-    "build": "tsc",
-    "start": "npm run build -- -w"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/youyilulu/egg-ts.git"
-  },
-  "keywords": [
-    "typescript",
-    "eggjs",
-    "plugin"
-  ],
-  "files": [
-    "config",
-    "app.ts",
-    "app"
-  ],
-  "author": "youyilulu",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/youyilulu/egg-ts/issues"
-  },
-  "homepage": "https://github.com/youyilulu/egg-ts#readme"
-=======
   "engines": {
     "node": ">=10.16.0"
   },
@@ -95,5 +53,4 @@
   },
   "author": "youyilulu",
   "license": "MIT"
->>>>>>> init
 }
