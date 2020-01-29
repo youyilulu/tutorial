@@ -1,7 +1,8 @@
-import { DataType, Table, Model, Column } from 'sequelize-typescript';
+import { DataType, Table, Column } from 'sequelize-typescript';
 import { providerWrapper } from 'midway';
+import BaseModel from './base';
 
-const { STRING, TEXT, INTEGER, DATEONLY } = DataType;
+const { STRING, TEXT, DATEONLY } = DataType;
 
 // using factory style to provide Model because most useful
 // sequelize methods are static in Model class. If you use
@@ -21,17 +22,7 @@ export type IEventModel = typeof EventModel;
   freezeTableName: true,
   tableName: 'his_events'
 })
-export class EventModel extends Model<EventModel> {
-  @Column({
-    type: INTEGER({
-      length: 11
-    }),
-    primaryKey: true,
-    autoIncrement: true,
-    comment: '事件id'
-  })
-  id: number;
-
+export class EventModel extends BaseModel {
   @Column({
     type: STRING(100),
     comment: '事件名称'

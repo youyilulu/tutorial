@@ -1,4 +1,4 @@
-import { Context, inject, controller, get, provide } from 'midway';
+import { Context, inject, controller, get, provide, post } from 'midway';
 import { IEventService } from '../../interface';
 
 @provide()
@@ -12,7 +12,12 @@ export class HomeController {
 
   @get('/')
   async index() {
-    this.ctx.helper.foo();
-    this.ctx.body = `success`;
+    this.ctx.body = await this.eventService.list();
+  }
+
+  @post('/')
+  async add() {
+    await this.eventService.add(this.ctx.request.body);
+    this.ctx.body = 'ok';
   }
 }
