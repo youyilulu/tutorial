@@ -9,8 +9,11 @@ export default (appInfo: EggAppInfo) => {
   config.keys = appInfo.name + '_1579685299925_143';
 
   // add your config here
-  config.middleware = [];
+  config.middleware = ['errorHandler'];
 
+  config.errorHandler = {
+    match: '/'
+  }
   config.security = {
     csrf: {
       enable: false
@@ -18,11 +21,11 @@ export default (appInfo: EggAppInfo) => {
   };
 
   config.sequelize = {
-    host: 'localhost',
+    host: '127.0.0.1',
     port: '3306',
     user: 'root',
     password: '111111',
-    database: 'history',
+    database: 'midway',
     dialect: 'mysql'
   };
 

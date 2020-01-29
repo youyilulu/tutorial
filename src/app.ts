@@ -5,8 +5,12 @@ export = app => {
   app.beforeStart(async () => {
     console.log('🚀 Your awesome APP is launching...');
 
-    await DB.initDB(app.config.sequelize);
-    if (process.env.NODE_ENV === 'create-db') { await DB.sequelize.sync({ force: true }); }
+    try {
+      await DB.initDB(app.config.sequelize);
+      if (process.env.NODE_ENV === 'create-db') { await DB.sequelize.sync({ force: true }); }
+    } catch (ex) {
+      console.error('db init error')
+    }
     console.log('✅  Your awesome APP launched');
   });
 };
