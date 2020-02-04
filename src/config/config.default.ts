@@ -1,3 +1,4 @@
+import * as path from 'path'
 import { EggAppConfig, EggAppInfo, PowerPartial } from 'midway';
 
 export type DefaultConfig = PowerPartial<EggAppConfig>;
@@ -14,6 +15,13 @@ export default (appInfo: EggAppInfo) => {
   config.errorHandler = {
     match: '/'
   }
+
+  config.customLogger = {
+    bizLogger: {
+      file: path.join(appInfo.root, 'logs/biz.log')
+    }
+  }
+
   config.security = {
     csrf: {
       enable: false
