@@ -13,6 +13,6 @@ export default class EventService implements IEventService {
   }
 
   async list(): Promise<EventModel[]> {
-    return await this.EventModel.getList<EventModel>();
+    return this.EventModel.getList<EventModel>();
   }
 }

@@ -1,10 +1,10 @@
-import * as path from 'path'
+import * as path from 'path';
 import { EggAppConfig, EggAppInfo, PowerPartial } from 'midway';
 
 export type DefaultConfig = PowerPartial<EggAppConfig>;
 
 export default (appInfo: EggAppInfo) => {
-  const config = <DefaultConfig>{};
+  const config = {} as DefaultConfig;
 
   // use for cookie sign key, should change to your own and keep security
   config.keys = appInfo.name + '_1579685299925_143';
@@ -14,13 +14,13 @@ export default (appInfo: EggAppInfo) => {
 
   config.errorHandler = {
     match: '/'
-  }
+  };
 
   config.customLogger = {
     bizLogger: {
       file: path.join(appInfo.root, 'logs/biz.log')
     }
-  }
+  };
 
   config.security = {
     csrf: {

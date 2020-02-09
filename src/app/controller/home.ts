@@ -12,7 +12,7 @@ export class HomeController {
 
   @get('/')
   async index() {
-    this.ctx.body = await this.eventService.list();
+    this.ctx.body = 'Welcome to midwayjs!';
   }
 
   @post('/')

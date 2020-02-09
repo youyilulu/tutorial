@@ -13,6 +13,7 @@
   },
   "devDependencies": {
     "@types/node": "^10.5.5",
+    "@types/mocha": "^5.2.7",
     "cross-env": "^6.0.0",
     "egg-ci": "^1.8.0",
     "midway-bin": "1",
