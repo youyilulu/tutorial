@@ -12,7 +12,8 @@ export class HomeController {
 
   @get('/')
   async index() {
-    this.ctx.body = 'Welcome to midwayjs!';
+    this.ctx.session.visited = this.ctx.session.visited ? this.ctx.session.visited + 1 : 1;
+    this.ctx.body = 'Welcome to midwayjs! - ' + this.ctx.session.visited;
   }
 
   @post('/')
