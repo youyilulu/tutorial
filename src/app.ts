@@ -23,11 +23,10 @@ export = app => {
       return app.cache.get(key);
     },
     async set(key, value, maxAge) {
-      console.log(`set:`, key, value, maxAge);
       await app.cache.set(key, value, maxAge / 1000);
     },
     async destroy(key) {
-      await app.cache.delete(key);
+      await app.cache.del(key);
     }
   };
 };
