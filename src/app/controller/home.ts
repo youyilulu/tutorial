@@ -13,7 +13,13 @@ export class HomeController {
   @get('/')
   async index() {
     this.ctx.session.visited = this.ctx.session.visited ? this.ctx.session.visited + 1 : 1;
-    this.ctx.body = 'Welcome to midwayjs! - ' + this.ctx.session.visited;
+    this.ctx.cookies.set('x-visit-count', this.ctx.session.visited.toString(), {
+      encrypt: true
+    });
+    const currentCookieVisit = this.ctx.cookies.get('x-visit-count', {
+      encrypt: true
+    });
+    this.ctx.body = `Welcome to midwayjs! - session[visited]:${this.ctx.session.visited},cookie[x-visit-count]:${currentCookieVisit}`;
   }
 
   @post('/')

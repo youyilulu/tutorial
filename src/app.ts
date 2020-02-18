@@ -16,14 +16,15 @@ export = app => {
     console.log('✅  Your awesome APP launched');
   });
 
+  app.cache.setDefault('redis');
+
   app.sessionStore = {
     async get(key) {
-      console.log('get', key);
       return app.cache.get(key);
     },
     async set(key, value, maxAge) {
-      console.log('set', key, value);
-      await app.cache.set(key, value, maxAge);
+      console.log(`set:`, key, value, maxAge);
+      await app.cache.set(key, value, maxAge / 1000);
     },
     async destroy(key) {
       await app.cache.delete(key);

@@ -28,6 +28,11 @@ export default (appInfo: EggAppInfo) => {
     }
   };
 
+  config.session = {
+    key: 'tutorial',
+    maxAge: 1000 * 30
+  };
+
   config.sequelize = {
     host: '127.0.0.1',
     port: '3306',

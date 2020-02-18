@@ -8,5 +8,9 @@ export default {
     enable: true,
     package: 'egg-born-cache'
   },
+  cache_redis: {
+    enable: true,
+    package: 'egg-born-cache-redis'
+  },
   static: true // default is true
 } as EggPlugin;
