@@ -6,7 +6,6 @@
   "dependencies": {
     "egg-scripts": "^2.10.0",
     "egg-ts": "../tutorial_plugins/egg-ts",
-    "egg-born-core": "../tutorial_plugins/egg-born-core",
     "egg-born-cache": "../tutorial_plugins/egg-born-cache",
     "egg-born-cache-redis": "../tutorial_plugins/egg-born-cache-redis",
     "midway": "^1.0.0",
