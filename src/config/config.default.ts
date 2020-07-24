@@ -45,7 +45,7 @@ export default (appInfo: EggAppInfo) => {
     config.redis = {
         client: {
             host: '127.0.0.1',
-            port: 32805,
+            port: 32771,
             password: 'redis',
         },
     };

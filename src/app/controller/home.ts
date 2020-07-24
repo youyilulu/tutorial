@@ -24,7 +24,9 @@ export class HomeController {
 
     @get('/cache')
     async cache() {
-        await this.ctx.app['cache'].set('x-visit-count', 1);
+        await this.ctx.app['cache'].set('x-visit-count', new Date().getTime());
+        this.ctx.helper.foo();
+        this.ctx.helper.bar();
         this.ctx.body = await this.ctx.app['cache'].get('x-visit-count');
     }
 
