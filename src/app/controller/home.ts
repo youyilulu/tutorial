@@ -1,4 +1,4 @@
-import { Context, inject, controller, get, provide, post } from 'midway';
+import { Context, inject, controller, get, provide, post, config } from 'midway';
 import { IEventService } from '../../interface';
 
 @provide()
@@ -9,6 +9,9 @@ export class HomeController {
 
     @inject()
     eventService: IEventService;
+
+    @config('biz')
+    biz;
 
     @get('/')
     async index() {
@@ -26,7 +29,6 @@ export class HomeController {
     async cache() {
         await this.ctx.app['cache'].set('x-visit-count', new Date().getTime());
         this.ctx.helper.foo();
-        this.ctx.helper.bar();
         this.ctx.body = await this.ctx.app['cache'].get('x-visit-count');
     }
 

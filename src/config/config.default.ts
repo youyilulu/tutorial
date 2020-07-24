@@ -50,5 +50,9 @@ export default (appInfo: EggAppInfo) => {
         },
     };
 
+    config.biz = {
+        appName: 'tutorial',
+    };
+
     return config;
 };
